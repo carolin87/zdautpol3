@@ -1,0 +1,51 @@
+
+petla_for () {
+
+lista_owocow=('banan' 'jablko' 'truskawka' 'ananas' 'gruszka')
+
+        for ((i=0; i < ${#lista_owocow[*]}; i++));do
+                echo "Owoc nr: ${i} to ${lista_owocow[${i}]}."
+        done
+echo "Smacznego!"
+}
+
+
+kalkulator () {
+
+echo "Witaj w kalkulatorze!"
+echo
+while true; do
+echo "Podaj dwie liczby całkowite."
+echo
+read -p "Liczba pierwsza: " liczba1
+read -p "Liczba druga: " liczba2
+echo
+echo "Świetny wybór! Twoje liczby to: ${liczba1} i ${liczba2}."
+echo
+read -p "Wybierz operacje która chcesz na nich wykonac ( \"+\"; \"-\"; \"/\"; \"*\"; \"%\" ): " operacja
+echo
+case ${operacja} in
+        +) echo "Suma = "$((liczba1 + liczba2));;
+	-) echo "Roznica = "$((liczba1 - liczba2));;
+        /) echo "Iloraz = "$((liczba1 / liczba2));;
+        %) echo "Modulo = "$((liczba1 % liczba2));;
+	*) echo "Iloczyn = "$((liczba1 * liczba2));;
+esac
+echo
+read -p "Czy chcesz wykonac kolejne dzialanie (y/n)?: " odpowiedz
+	case ${odpowiedz} in
+		y) continue;;
+		n) echo "Do zobaczenia!" 
+                   break;;
+
+	esac
+done
+}
+
+case ${1} in
+	kalkulator) kalkulator;;
+	for) petla_for;;
+	*) echo "Wybierz funkcje do przetestowania: kalkulator, for";;
+esac
+		
+
