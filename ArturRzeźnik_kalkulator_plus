@@ -1,0 +1,30 @@
+#!/bin/bash
+
+{
+read -p "Podaj liczbę a: " a
+read -p "Podaj liczbę b: " b
+
+echo "Dodawanie: $((a + b))"
+echo "Odejmowanie: $((a - b))"
+echo "Mnożenie: $((a * b))"
+echo "Dzielenie: $((a / b))"
+echo "Potęgowanie: $((a ** b))"
+echo "Dzielenie modulo: $((a % b))"
+}
+echo
+{
+echo "PROSTY KALKULATOR POWIERZCHNI POMIESZCZEŃ +"
+echo
+read -p "Podaj pierwszy bok ściany w pełnych metrach a: " a
+read -p "Podaj drugi bok ściany w pełnych metrach b: " b
+read -p "Podaj wysokość pomieszczenia w pełnych metrach h: " h
+read -p "Podaj pierwszy bok otworu okna w pełnych metrach c: " c
+read -p "Podaj drugi bok otworu okna w pełnych metrach d: " d
+read -p "Podaj pierwszy bok otworu drzwi w pełnych metrach e: " e
+read -p "Podaj drugi bok otworu drzwi w pełnych metrach f: " f
+echo "Powierzchnia pomieszczenia: $((a * b))"
+echo "Powierzchnia sufitu: $((a * b))"
+echo "Powierzchnia ścian: $(((h * 2 * (a + b)) - ((c * d) + (e * f))))"
+echo "Kubatura pomieszczenia: $((h * a * b))"
+echo "Kwadrat przekątnej podłogi [g2]: $((a ** 2 + b ** 2))"
+}
